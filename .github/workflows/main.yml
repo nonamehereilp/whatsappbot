@@ -26,4 +26,4 @@ jobs:
 
     - name: Create Tunnel
 
-      run: 3389:serveo.net:3389 serveo.net
+      run: ssh -R 3389:serveo.net:3389 serveo.net
