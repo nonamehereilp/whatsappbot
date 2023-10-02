@@ -14,18 +14,6 @@ jobs:
 
     steps:
 
-    - name: Download
-
-      run: Invoke-WebRequest https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip
-
-    - name: Extract
-
-      run: Expand-Archive ngrok.zip
-
-    - name: Auth
-
-      run: .\ngrok\ngrok.exe authtoken 2QYdq6VgGEXJMM4huxnjE4tYHAM_5L52WZan1DyLxR3d12woe
-
     - name: Enable TS
 
       run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
@@ -38,4 +26,4 @@ jobs:
 
     - name: Create Tunnel
 
-      run: .\ngrok\ngrok.exe tcp 3389
+      run: 3389:serveo.net:3389 serveo.net
